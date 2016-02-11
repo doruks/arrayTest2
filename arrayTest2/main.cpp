@@ -13,6 +13,8 @@ using namespace std;
 
 int getRandomNumber();
 
+int lowestElement(int array[], int noOfElement);
+
 int main(int argc, const char * argv[]) {
     int randomNumber[10];
     
@@ -22,9 +24,20 @@ int main(int argc, const char * argv[]) {
         randomNumber[i]=getRandomNumber();
         cout <<i<<". random number is: "<<randomNumber[i]<<endl;
         
-    }  
+    }
     
     return 0;
+}
+
+int lowestElement(int array[], int noOfElement) {
+    int lowest = 101;
+    for (int i=0; i<noOfElement; i++) {
+        if (array[i]<lowest) {
+            lowest = array[i];
+        }
+    }
+    
+    return lowest;
 }
 
 
