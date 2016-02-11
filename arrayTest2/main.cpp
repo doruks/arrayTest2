@@ -12,34 +12,34 @@
 using namespace std;
 
 int getRandomNumber();
-int getSmallRandomNumber();
 
 int lowestElement(int array[], int noOfElement);
 
 int main(int argc, const char * argv[]) {
+    srand((unsigned int) time(NULL));
     int randomNumber[10];
     int sortedNumber[10];
     int lowElement = 0;
     
     for (int i=0; i<10; i++)
     {
-        sleep(getSmallRandomNumber());
         randomNumber[i]=getRandomNumber();
         cout <<i<<". random number is: "<<randomNumber[i]<<endl;
-        
     }
     
-    
-    
-    cout << "lowest element is: " << lowElement << endl;
+    cout << "==========================" << endl;
     
     
     
     for (int i=0; i<10; i++)
     {
-        cout << i << ". random number is: " << randomNumber[i] << endl;
         lowElement = lowestElement(randomNumber, 10);
         sortedNumber[i] = lowElement;
+        
+    }
+
+    
+    for (int i=0; i<10; i++) {
         cout << i << ". sorted number is: " << sortedNumber[i] << endl;
     }
     
@@ -70,19 +70,7 @@ int lowestElement(int array[], int noOfElement) {
 int getRandomNumber()
 {
     int aNumber = 0;
-    
-    srand((unsigned int) time(NULL));
     aNumber =  (rand()%100)+1;
-    return aNumber;
-    
-}
-
-int getSmallRandomNumber()
-{
-    int aNumber = 0;
-    
-    srand((unsigned int) time(NULL));
-    aNumber =  (rand()%3)+1;
     return aNumber;
     
 }
