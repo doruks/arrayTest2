@@ -16,14 +16,13 @@ int getRandomNumber();
 int main(int argc, const char * argv[]) {
     int randomNumber[10];
     
-    for (int i=1; i<10; i++)
+    for (int i=0; i<10; i++)
     {
+        sleep(1);
         randomNumber[i]=getRandomNumber();
         cout <<i<<". random number is: "<<randomNumber[i]<<endl;
         
-    }
-    
-   
+    }  
     
     return 0;
 }
@@ -33,11 +32,8 @@ int getRandomNumber()
 {
     int aNumber = 0;
     
-    srand(time_t(NULL));
-    for (int i=1; i<10; i++)
-    {
-        aNumber =  (rand()%100)+1;
-    }
+    srand((unsigned int) time(NULL));
+    aNumber =  (rand()%100)+1;
     return aNumber;
     
 }
